@@ -1,0 +1,62 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>
+            Contact
+        </ion-title>
+        <ion-buttons end class="UMSNavButtons">
+            <button (click)="deleteContact(contact);">
+                <ion-icon name="ion-minus"></ion-icon>
+                Delete Contact
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+    <ion-list no-lines>
+        <form [formGroup]="editForm">
+            <ion-item>
+                <ion-label color="{{ editForm.controls.id.errors && editForm.controls.id.dirty ? 'danger' : 'primary' }}" floating>Id</ion-label>
+                <ion-input formControlName="id" type="text"></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ editForm.controls.first_name.errors && editForm.controls.first_name.dirty ? 'danger' : 'primary' }}" floating>First Name</ion-label>
+                <ion-input formControlName="first_name" type="text"></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ editForm.controls.last_name.errors && editForm.controls.last_name.dirty ? 'danger' : 'primary' }}" floating>Last Name</ion-label>
+                <ion-input formControlName="last_name" type="text"></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ editForm.controls.email.errors && editForm.controls.email.dirty ? 'danger' : 'primary' }}" floating>Email</ion-label>
+                <ion-input formControlName="email" type="text"></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ editForm.controls.Company.errors && editForm.controls.Company.dirty ? 'danger' : 'primary' }}" floating>Company</ion-label>
+                <ion-input formControlName="Company" type="text"></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ editForm.controls.gender.errors && editForm.controls.gender.dirty ? 'danger' : 'primary' }}" floating>Gender</ion-label>
+                <ion-input formControlName="gender" type="text"></ion-input>
+
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ editForm.controls.avatar.errors && editForm.controls.avatar.dirty ? 'danger' : 'primary' }}" floating>Avatar</ion-label>
+                <ion-input formControlName="avatar" type="text"></ion-input>
+
+            </ion-item>
+            <ion-buttons padding>
+                <button ion-button full (click)="updateContact(editForm);" [disabled]="!editForm.valid">Update</button>
+            </ion-buttons>
+        </form>
+    </ion-list>
+</ion-content>

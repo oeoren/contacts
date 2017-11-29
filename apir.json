@@ -1,0 +1,20 @@
+{
+  "BaseAddress": "http://localhost:18092",
+  "OutPath": "cs\\",
+  "Swagger": true,
+  "SwaggerUI": true,
+  "UserValidator": "",
+  "MachineValidate": "",
+  "DomainValidate": "",
+  "RelayHost": false,
+  "ApirKey": "973d633c-d982-4878-ab66-eebe7351e1c5",
+  "ServiceKey": "7e27c9b8-2fa0-452a-86c5-9e80229af31a",
+  "FreeResources": "Login,Register",
+  "apirApi": "http://apir.azurewebsites.net/api/",
+  "apirTenant": "community",
+  "apirUser": "ApirUser",
+  "apirPassword": "apir16",
+  "ClientSettingsProviderServiceUri": "",
+  "ConnectionString": "Data Source=localhost\\sqlexpress;Initial Catalog=Contact;Persist Security Info=True;User ID=sa;Password=as123",
+  "SettingsReadFrom": "apir.json"
+}

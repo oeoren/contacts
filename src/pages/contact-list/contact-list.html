@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Contact</ion-title>
+        <ion-buttons end class="UMSNavButtons">
+            <button (click)="add()">
+                <ion-icon name="add"></ion-icon>
+                New Contact
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-searchbar (ionInput)="searchContacts($event)"></ion-searchbar>
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let contact of currentContacts">
+            <button ion-item (click)="open(contact)">
+                <!--<ion-avatar item-start>
+                    <img [src]="contact.avatar" />
+                </ion-avatar>-->
+                <h2>{{contact.first_name}}</h2>
+                <p>{{contact.last_name}}</p>
+            </button>
+
+        </ion-item-sliding>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

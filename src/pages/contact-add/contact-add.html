@@ -1,0 +1,47 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Add Contact</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+    <ion-list no-lines>
+        <form [formGroup]="addForm">
+            <ion-item>
+                <ion-label color="{{ addForm.controls.id.errors && addForm.controls.id.dirty ? 'danger' : 'primary' }}" floating>Id</ion-label>
+                <ion-input formControlName="id" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ addForm.controls.first_name.errors && addForm.controls.first_name.dirty ? 'danger' : 'primary' }}" floating>First Name</ion-label>
+                <ion-input formControlName="first_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ addForm.controls.last_name.errors && addForm.controls.last_name.dirty ? 'danger' : 'primary' }}" floating>Last Name</ion-label>
+                <ion-input formControlName="last_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ addForm.controls.email.errors && addForm.controls.email.dirty ? 'danger' : 'primary' }}" floating>Email</ion-label>
+                <ion-input formControlName="email" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ addForm.controls.Company.errors && addForm.controls.Company.dirty ? 'danger' : 'primary' }}" floating>Company</ion-label>
+                <ion-input formControlName="Company" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ addForm.controls.gender.errors && addForm.controls.gender.dirty ? 'danger' : 'primary' }}" floating>Gender</ion-label>
+                <ion-input formControlName="gender" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="{{ addForm.controls.avatar.errors && addForm.controls.avatar.dirty ? 'danger' : 'primary' }}" floating>Avatar</ion-label>
+                <ion-input formControlName="avatar" type="text"></ion-input>
+            </ion-item>
+            <ion-buttons padding>
+                <button ion-button full (click)="addContact();" [disabled]="!addForm.valid">Submit</button>
+            </ion-buttons>
+        </form>
+    </ion-list>
+</ion-content>
